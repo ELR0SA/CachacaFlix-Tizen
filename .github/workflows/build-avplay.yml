@@ -71,6 +71,11 @@ jobs:
         run: |
           cp extras/icon.png jellyfin-tizen/icon.png
 
+      # 9.2. Rename the app so Tizen's native loading screen shows "CachaçaFlix"
+      - name: Renaming app
+        run: |
+          sed -i 's#<name>Jellyfin</name>#<name>CachaçaFlix</name>#' jellyfin-tizen/config.xml
+
       # 10. Copy avplayVideoPlayer.js
       - name: Add avplayVideoPlayer.js
         run: |
