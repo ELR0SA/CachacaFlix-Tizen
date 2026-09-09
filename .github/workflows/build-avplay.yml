@@ -66,12 +66,11 @@ jobs:
           cd jellyfin-tizen
           git checkout master
           
-      # 9.1. Add Oblong Icon
-      - name: Adding Oblong icon
+      # 9.1. Add custom CachaçaFlix icon
+      - name: Adding custom icon
         run: |
-          cd jellyfin-tizen
-          wget -O icon.png https://raw.githubusercontent.com/asamahy/jellyfin-tizen-builds/refs/heads/master/iconoblong.png
-          
+          cp extras/icon.png jellyfin-tizen/icon.png
+
       # 10. Copy avplayVideoPlayer.js
       - name: Add avplayVideoPlayer.js
         run: |
