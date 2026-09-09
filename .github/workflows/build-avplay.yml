@@ -189,7 +189,7 @@ jobs:
           ./package.exp
           mkdir -p release
           DATE=$(date +'%Y-%m-%d-%H%M')  
-          mv jellyfin-tizen/.buildResult/Jellyfin.wgt release/Jellyfin-AVPlay-SmartHub-Oblonged-${DATE}.wgt
+          mv jellyfin-tizen/.buildResult/Jellyfin.wgt release/CachacaFlix_${DATE}.wgt
           
       # 20. Get version and date
       - name: Get version info
