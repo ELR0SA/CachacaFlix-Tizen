@@ -90,6 +90,15 @@ function _AvplayVideoPlayer(modules) {
                             IsRequired: false,
                             Property: 'VideoLevel',
                             Value: '183'
+                        },
+                        {
+                            // Tizen doesn't support Dolby Vision decoding, but it can play the HDR10/SDR
+                            // fallback layer baked into the same file, so advertise those DOVI variants
+                            // as supported to avoid the server remuxing/transcoding unnecessarily.
+                            Condition: 'EqualsAny',
+                            IsRequired: false,
+                            Property: 'VideoRangeType',
+                            Value: 'SDR|HDR10|HDR10Plus|HLG|DOVIWithSDR|DOVIWithHDR10|DOVIWithHDR10Plus|DOVIWithHLG|DOVIWithEL|DOVIWithELHDR10Plus|DOVIInvalid'
                         }
                     ],
                     Type: 'Video'
